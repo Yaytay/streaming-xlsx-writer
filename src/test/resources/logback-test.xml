@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="10 minutes">
+
+  <appender name="STDOUTPUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} %line - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator" />
+
+  <logger name="uk.co.spudsoft" level="TRACE" additivity="false">
+    <appender-ref ref="STDOUTPUT" />
+  </logger>
+
+  <root level="INFO">
+    <appender-ref ref="STDOUTPUT"/>
+  </root>
+
+</configuration>

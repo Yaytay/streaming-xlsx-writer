@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+  <module name="NewlineAtEndOfFile">
+    <property name="lineSeparator" value="lf"/>
+  </module>
+  <module name="Translation"/>
+  <module name="FileTabCharacter"/>
+  <module name="RegexpSingleline">
+    <property name="format" value="\t"/>
+    <property name="minimum" value="0"/>
+    <property name="maximum" value="0"/>
+    <property name="message" value="Line contains tabs, convert to spaces."/>
+  </module>
+  <module name="SuppressWarningsFilter"/>
+  <module name="TreeWalker">
+    <module name="Regexp">
+      <property name="id" value="NoAccessToStdOut"/>
+      <property name="format" value="System\.out"/>
+      <property name="illegalPattern" value="true"/>
+      <property name="message" value="Atttempt to access stdout"/>
+    </module>
+    <module name="Regexp">
+      <property name="format" value="printStackTrace"/>
+      <property name="illegalPattern" value="true"/>
+    </module>
+    <module name="JavadocMethod">
+      <property name="accessModifiers" value="public"/>
+    </module>
+    <module name="SuppressWarningsHolder"/>
+    <module name="JavadocType"/>
+    <module name="JavadocStyle"/>
+    <module name="ConstantName">
+      <property name="format" value="^logger$|^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+    </module>
+    <module name="LocalFinalVariableName"/>
+    <module name="NoFinalizer"/>
+    <module name="LocalVariableName"/>
+    <module name="MemberName"/>
+    <module name="MethodName"/>
+    <module name="PackageName"/>
+    <module name="ParameterName"/>
+    <module name="StaticVariableName"/>
+    <module name="TypeName"/>
+    <module name="AvoidStarImport">
+      <property name="allowStaticMemberImports" value="true"/>
+    </module>
+    <module name="IllegalImport"/>
+    <module name="RedundantImport"/>
+    <module name="UnusedImports"/>
+    <module name="ParameterNumber">
+      <property name="max" value="35"/>
+    </module>
+    <module name="EmptyForIteratorPad"/>
+    <module name="GenericWhitespace"/>
+    <module name="MethodParamPad"/>
+    <module name="NoWhitespaceAfter"/>
+    <module name="NoWhitespaceBefore">
+      <property name="tokens" value="POST_DEC,POST_INC"/>
+    </module>
+    <module name="OperatorWrap"/>
+    <module name="ParenPad"/>
+    <module name="TypecastParenPad"/>
+    <module name="WhitespaceAfter"/>
+    <module name="ModifierOrder"/>
+    <module name="RedundantModifier"/>
+    <module name="AvoidNestedBlocks"/>
+    <module name="EmptyBlock"/>
+    <module name="LeftCurly"/>
+    <module name="NeedBraces"/>
+    <module name="RightCurly"/>
+    <module name="EmptyStatement"/>
+    <module name="EqualsHashCode"/>
+    <module name="IllegalInstantiation"/>
+    <module name="MissingSwitchDefault"/>
+    <module name="SimplifyBooleanExpression"/>
+    <module name="SimplifyBooleanReturn"/>
+    <module name="InterfaceIsType"/>
+    <module name="VisibilityModifier">
+      <property name="allowPublicFinalFields" value="true"/>
+      <property name="allowPublicImmutableFields" value="true"/>
+      <property name="protectedAllowed" value="true"/>
+    </module>
+    <module name="TodoComment"/>
+    <module name="UpperEll"/>
+    <module name="Regexp">
+      <property name="format" value="System\.out\.print"/>
+      <property name="illegalPattern" value="true"/>
+    </module>
+  </module>
+</module>
