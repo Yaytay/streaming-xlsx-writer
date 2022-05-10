@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>uk.co.spudsoft</groupId>
-  <artifactId>xlsx</artifactId>
+  <artifactId>xlsx-writer</artifactId>
   <version>0.0.0</version>
   <name>Streaming XLSX Writer</name>
   
