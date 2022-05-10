@@ -60,3 +60,9 @@ Do not use the colours or fonts from the sample below, they hurt the eyes.
       }
     }
 ```
+
+# Logging
+The streaming-xlsx-writer currently does no logging.
+This is because it doesn't actually do many calculations and the unit test coverage is pretty good for them so I thought it best to remove the dependency.
+
+I'm not very fixed to this position, if you can think of a use for logging please file an issue and I will put slf4j back in (no other logging facades will be considered).
