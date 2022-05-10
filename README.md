@@ -20,7 +20,10 @@ The basic usage pattern is:
 6. Call close to end the XLSX document.
 7. Call close to close the OutputStream.
 
-It is recommended that try-with-resources be used for closing the XlsxWriter and the OutputStream if possible.
+It is recommended that try-with-resources be used for closing the XlsxWriter and the OutputStream if possible - though given the 
+intended use as the sink in an asynchronous stream this probably won't be possible.
+
+Do not use the colours or fonts from the sample below, they hurt the eyes.
 
 ```java
     String[] DAYS_OF_WEEK = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
