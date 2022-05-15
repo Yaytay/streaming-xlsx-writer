@@ -1,0 +1,74 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Build test & deploy to GitHub packages and Maven Central
+
+on:
+  create:
+    tags: [ '*' ]
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'zulu'
+        cache: maven
+    - name: Generate settings.xml for Maven Builds
+      uses: whelk-io/maven-settings-xml-action@v20
+      with:
+        servers: '[{ "id": "github", "username": "yaytay", "password": "${{ secrets.GITHUB_TOKEN }}" }]'      
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2
+        restore-keys: ${{ runner.os }}-m2
+    - name: Check git state
+      run: |
+      
+        git status
+        git describe
+        git tag --list -n1
+    - id: install-secret-key
+      name: Install gpg secret key
+      run: |
+        cat <(echo -e "${{ secrets.GPG_SECRET_KEY }}") | gpg --batch --import
+        gpg --list-secret-keys --keyid-format LONG    
+    - name: Build with Maven
+      run: |
+        mvn -B \
+          "-Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}" \
+          --file pom.xml \
+          clean install gpg:sign 
+    - name: Deploy with Maven to GitHub Packages
+      run: |
+        mvn -B \
+          -DskipTests \
+          -DaltDeploymentRepository=github::https://maven.pkg.github.com/Yaytay/vertx-xlsx-writer \
+          --file pom.xml \
+          deploy
+    - name: Deploy with Maven to Maven Central
+      env:
+        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+      run: |
+        mvn -B \
+          -DskipTests \
+          "-Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}" \
+          -DaltDeploymentRepository=ossrh::https://oss.sonatype.org/service/local/staging/deploy/maven2/ \
+          --file pom.xml \
+          deploy
+    - uses: actions/delete-package-versions@v3
+      with: 
+        package-name: 'uk.co.spudsoft.xlsx'
+        min-versions-to-keep: 10
+        delete-only-pre-release-versions: "true" 

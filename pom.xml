@@ -9,6 +9,8 @@
   <artifactId>xlsx-writer</artifactId>
   <version>0.0.0</version>
   <name>Streaming XLSX Writer</name>
+  <description>Library for outputting XLSX files with minimal dependencies or overhead.</description>
+  <url>https://github.com/Yaytay/streaming-xlsx-writer</url>
   
   <licenses>
     <license>
@@ -22,6 +24,7 @@
       <id>yaytay</id>
       <name>Jim Talbut</name>
       <email>jim-streaming-xlsx-writer @ spudsoft.co.uk</email>
+      <organizationUrl>https://github.com/Yaytay</organizationUrl>
     </developer>
   </developers>
     
@@ -31,14 +34,6 @@
     <url>https://github.com/Yaytay/streaming-xlsx-writer</url>
   </scm>  
 
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub Yaytay streaming-xlsx-writer Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/Yaytay/streaming-xlsx-writer</url>
-    </repository>
-  </distributionManagement>
-    
   <properties>
     <forkCount>4</forkCount>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -103,7 +98,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>4.4.0</version>
+      <version>4.5.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -287,7 +282,7 @@
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>10.1</version>
+            <version>10.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -398,7 +393,7 @@
       <plugin>
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
-        <version>7.0.4</version>
+        <version>7.1.0</version>
         <configuration>
           <failBuildOnCVSS>8</failBuildOnCVSS>
           <failOnError>false</failOnError>
@@ -452,7 +447,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.3.2</version>
+        <version>3.4.0</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -483,7 +478,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.11.0</version>
+        <version>3.12.0</version>
       </plugin>
 
       <plugin>
@@ -491,6 +486,12 @@
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>3.2.2</version>
       </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.0.0-M2</version>
+      </plugin>      
 
     </plugins>
   </build>
@@ -500,7 +501,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.7</version>
+        <version>0.8.8</version>
         <reportSets>
           <reportSet>
             <reports>

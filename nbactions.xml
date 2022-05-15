@@ -4,7 +4,8 @@
             <actionName>CUSTOM-Sign</actionName>
             <displayName>Sign</displayName>
             <goals>
-                <goal>maven-gpg-plugin:sign</goal>
+                <goal>install</goal>
+                <goal>gpg:sign</goal>
             </goals>
             <activatedProfiles>
                 <activatedProfile>ci-cd</activatedProfile>
