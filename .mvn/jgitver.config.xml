@@ -5,4 +5,5 @@
   <exclusions>
     <exclusion>.m2</exclusion>
   </exclusions>
+  <nonQualifierBranches>main,master</nonQualifierBranches>
 </configuration>
