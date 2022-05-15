@@ -53,7 +53,7 @@ jobs:
       run: |
         mvn -B \
           -DskipTests \
-          -DaltDeploymentRepository=github::https://maven.pkg.github.com/Yaytay/vertx-xlsx-writer \
+          -DaltDeploymentRepository=github::https://maven.pkg.github.com/Yaytay/streaming-xlsx-writer \
           --file pom.xml \
           deploy
     - name: Deploy with Maven to Maven Central
