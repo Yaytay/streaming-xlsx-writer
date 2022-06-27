@@ -1,5 +1,12 @@
 # About streaming-xlsx-writer
-The streaming-xlsx-writer is a minimal jar (no runtime dependencies)to enable the output of a single sheet XLSX file on an OutputStream.
+
+[![Latest release](https://img.shields.io/github/release/yaytay/streaming-xlsx-writer.svg)](https://github.com/yaytay/streaming-xlsx-writer/latest)
+[![License](https://img.shields.io/github/license/yaytay/streaming-xlsx-writer)](https://github.com/yaytay/streaming-xlsx-writer/blob/master/LICENCE.md)
+[![Issues](https://img.shields.io/github/issues/yaytay/streaming-xlsx-writer)](https://github.com/yaytay/streaming-xlsx-writer/issues)
+[![Build Status](https://github.com/yaytay/streaming-xlsx-writer/actions/workflows/buildtest.yml/badge.svg)](https://github.com/Yaytay/streaming-xlsx-writer/actions/workflows/buildtest.yml)
+[![CodeCov](https://codecov.io/gh/Yaytay/streaming-xlsx-writer/branch/main/graph/badge.svg?token=ACHVK20T9Q)](https://codecov.io/gh/Yaytay/streaming-xlsx-writer)
+
+The streaming-xlsx-writer is a minimal jar (no runtime dependencies) to enable the output of a single sheet XLSX file on an OutputStream.
 The file is generated as it is output, there is no buffering beyond that built into a ZipOutputStream and no blocking beyond that inherent in the OutputStream.
 
 # Build Status
