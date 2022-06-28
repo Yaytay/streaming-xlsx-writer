@@ -59,7 +59,7 @@ jobs:
         GITHUB_ACTOR: ${{ github.actor }} # GITHUB_TOKEN is the default env for the password 
         GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password 
       run: |
-        mvn -B \
+        mvn -P ci-cd -B \
           -DskipTests \
           -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/$GITHUB_REPOSITORY \
           --file pom.xml \
@@ -79,7 +79,7 @@ jobs:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
       run: |
-        mvn -B \
+        mvn -P ci-cd -B \
           -DskipTests \
           "-Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}" \
           -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/service/local/staging/deploy/maven2/ \
