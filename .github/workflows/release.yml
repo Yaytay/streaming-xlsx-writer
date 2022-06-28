@@ -56,10 +56,12 @@ jobs:
       
     - name: Deploy with Maven to GitHub Packages
       env:
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         GITHUB_ACTOR: ${{ github.actor }} # GITHUB_TOKEN is the default env for the password 
         GITHUB_TOKEN: ${{ github.token }} # GITHUB_TOKEN is the default env for the password 
       run: |
-        mvn -P ci-cd -B \
+        mvn -B \
+          -P ci-cd \
           -DskipTests \
           -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/$GITHUB_REPOSITORY \
           --file pom.xml \
@@ -76,10 +78,12 @@ jobs:
         
     - name: Deploy with Maven to Maven Central
       env:
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
       run: |
-        mvn -P ci-cd -B \
+        mvn -B \
+          -P ci-cd \
           -DskipTests \
           "-Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}" \
           -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/service/local/staging/deploy/maven2/ \
