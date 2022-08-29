@@ -39,7 +39,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jdk.version>11</jdk.version>
     <jackson.version>[2.13,]</jackson.version>
-    <slf4j.version>[1.7,1.8.0-alpha0)</slf4j.version>
+    <slf4j.version>[1.7,)</slf4j.version>
+    <logback.version>[1.2,)</logback.version>
     <junit-jupiter.version>5.9.0</junit-jupiter.version>
     <junit-platform.version>1.9.0</junit-platform.version>
   </properties>
@@ -56,7 +57,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.2.11</version>
+      <version>${logback.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -98,7 +99,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>4.6.1</version>
+      <version>4.7.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -282,7 +283,7 @@
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>10.3.2</version>
+            <version>10.3.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -393,7 +394,7 @@
       <plugin>
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
-        <version>7.1.1</version>
+        <version>7.1.2</version>
         <configuration>
           <failBuildOnCVSS>8</failBuildOnCVSS>
           <failOnError>false</failOnError>
@@ -447,7 +448,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.4.1</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -484,7 +485,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.4.1</version>
       </plugin>
       
       <plugin>
