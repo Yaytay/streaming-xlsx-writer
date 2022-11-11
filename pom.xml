@@ -399,6 +399,7 @@
           <failBuildOnCVSS>8</failBuildOnCVSS>
           <failOnError>false</failOnError>
           <format>ALL</format>
+          <skipTestScope>false</skipTestScope>
           <suppressionFiles>
             dependency-check-supressions.xml
           </suppressionFiles>
