@@ -56,6 +56,7 @@ public class AbstractXlsxWriterTest {
                       , i == 2 ? null : i * i
                       , new Date()
                       , "=INDIRECT(\"A\" & ROW()) * INDIRECT(\"D\" & ROW())"
+                      , i % 2 == 0
               )
       );
     }

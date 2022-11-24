@@ -293,6 +293,7 @@ public class XlsxWriter implements Closeable {
    * <li>Other strings values are output as inline strings.
    * <li>Temporal values are output as numeric values complying with Excel data/time formatting.
    * <li>Number values are output as numeric values.
+   * <li>Boolean values are output as boolean values.
    * <li>Anything else is output as an inline string after calling toString() on it.
    * </ul>
    * 
@@ -323,6 +324,8 @@ public class XlsxWriter implements Closeable {
         }
       } else if (cellData instanceof Temporal) {
         rowString.append("><v>").append(temporalToExcelValue((Temporal) cellData)).append("</v></c>");
+      } else if (cellData instanceof Boolean) {
+        rowString.append(" t=\"b\"><v>").append((Boolean) cellData ? "1" : "0").append("</v></c>");
       } else if (cellData instanceof Number) {
         rowString.append("><v>").append(cellData.toString()).append("</v></c>");
       } else {
