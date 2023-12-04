@@ -42,7 +42,7 @@
     <slf4j.version>[1.7,)</slf4j.version>
     <logback.version>[1.2,)</logback.version>
     <junit-jupiter.version>5.10.1</junit-jupiter.version>
-    <junit-platform.version>1.10.0</junit-platform.version>
+    <junit-platform.version>1.10.1</junit-platform.version>
   </properties>
   
   <dependencies>
@@ -99,7 +99,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>5.7.0</version>
+      <version>5.8.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -140,7 +140,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.16.1</version>
+        <version>2.16.2</version>
         <executions>
           <execution>
             <id>display-plugin-updates</id>
@@ -172,7 +172,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>3.6.2</version>
+                  <version>3.9.0</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
                   <version>${jdk.version}</version>
@@ -186,7 +186,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <phase>initialize</phase>
@@ -233,7 +233,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.8.1.0</version>
+        <version>4.8.2.0</version>
         <configuration>
           <fork>true</fork>
           <effort>Max</effort>
@@ -283,7 +283,7 @@
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>10.12.4</version>
+            <version>10.12.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -291,7 +291,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.1</version>
+        <version>3.2.2</version>
         <configuration>
           <forkCount>${forkCount}</forkCount>
           <reuseForks>true</reuseForks>
@@ -394,7 +394,7 @@
       <plugin>
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
-        <version>9.0.0</version>
+        <version>9.0.2</version>
         <configuration>
           <failBuildOnCVSS>8</failBuildOnCVSS>
           <failOnError>false</failOnError>
@@ -403,6 +403,7 @@
           <suppressionFiles>
             dependency-check-supressions.xml
           </suppressionFiles>
+          <nvdApiKey>${NVD_API_KEY}</nvdApiKey>
         </configuration>
         <executions>
           <execution>
@@ -449,7 +450,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.6.2</version>
+        <version>3.6.3</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -486,7 +487,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.4.5</version>
+        <version>3.5.0</version>
       </plugin>
       
       <plugin>
@@ -531,6 +532,7 @@
           <suppressionFiles>
             dependency-check-supressions.xml
           </suppressionFiles>
+          <nvdApiKey>${NVD_API_KEY}</nvdApiKey>
         </configuration>
       </plugin>
       
