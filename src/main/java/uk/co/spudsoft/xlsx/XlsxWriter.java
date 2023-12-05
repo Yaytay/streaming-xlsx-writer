@@ -347,7 +347,7 @@ public class XlsxWriter implements Closeable {
     zipout.finish();
   }
   
-  String buildTheme(TableDefinition defn) {
+  private String buildTheme(TableDefinition defn) {
     StringBuilder bldr = new StringBuilder();
     bldr.append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
             .append("<a:theme xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" name=\"Office Theme\">")
@@ -483,7 +483,7 @@ public class XlsxWriter implements Closeable {
     return input.replaceAll("&", "&amp;").replaceAll("<", "&lt;");
   }
   
-  String buildStyles(TableDefinition defn) {
+  private String buildStyles(TableDefinition defn) {
     StringBuilder bldr = new StringBuilder();
     bldr.append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><styleSheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" mc:Ignorable=\"x14ac x16r2 xr\" xmlns:x14ac=\"http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac\" xmlns:x16r2=\"http://schemas.microsoft.com/office/spreadsheetml/2015/02/main\" xmlns:xr=\"http://schemas.microsoft.com/office/spreadsheetml/2014/revision\">");
     buildNumFmts(numFmtIdMap, bldr, defn);
