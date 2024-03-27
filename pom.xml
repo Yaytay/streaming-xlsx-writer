@@ -580,6 +580,11 @@
                 <goals>
                   <goal>sign</goal>
                 </goals>
+                <configuration>
+                  <signer>bc</signer>
+                  <keyEnvName>GPG_PRIVATEKEY</keyEnvName>
+                  <passphraseEnvName>GPG_PASSPHRASE</passphraseEnvName>
+                </configuration>
               </execution>
             </executions>
           </plugin>
