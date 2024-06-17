@@ -162,7 +162,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.4.1</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <id>enforce-versions</id>
@@ -262,7 +262,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.3.1</version>
+        <version>3.4.0</version>
         <configuration>
           <configLocation>${basedir}/checkstyle.xml</configLocation>
           <encoding>UTF-8</encoding>
@@ -291,7 +291,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.5</version>
+        <version>3.3.0</version>
         <configuration>
           <forkCount>${forkCount}</forkCount>
           <reuseForks>true</reuseForks>
@@ -309,7 +309,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.2.5</version>
+        <version>3.3.0</version>
         <executions>
           <execution>
             <goals>
@@ -417,7 +417,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.6.1</version>
+        <version>3.7.0</version>
         <executions>
           <execution>
             <id>copy-dependencies</id>
@@ -450,7 +450,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.6.3</version>
+        <version>3.7.0</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -487,7 +487,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.6.0</version>
       </plugin>
       
       <plugin>
