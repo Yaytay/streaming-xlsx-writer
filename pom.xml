@@ -41,8 +41,8 @@
     <jackson.version>[2.15,]</jackson.version>
     <slf4j.version>[1.7,)</slf4j.version>
     <logback.version>[1.2,)</logback.version>
-    <junit-jupiter.version>5.10.3</junit-jupiter.version>
-    <junit-platform.version>1.10.3</junit-platform.version>
+    <junit-jupiter.version>5.11.2</junit-jupiter.version>
+    <junit-platform.version>1.11.2</junit-platform.version>
   </properties>
   
   <dependencies>
@@ -233,7 +233,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.8.6.2</version>
+        <version>4.8.6.4</version>
         <configuration>
           <fork>true</fork>
           <effort>Max</effort>
@@ -262,7 +262,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.5.0</version>
         <configuration>
           <configLocation>${basedir}/checkstyle.xml</configLocation>
           <encoding>UTF-8</encoding>
@@ -291,7 +291,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.5.1</version>
         <configuration>
           <forkCount>${forkCount}</forkCount>
           <reuseForks>true</reuseForks>
@@ -309,7 +309,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.5.1</version>
         <executions>
           <execution>
             <goals>
@@ -417,7 +417,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.7.1</version>
+        <version>3.8.0</version>
         <executions>
           <execution>
             <id>copy-dependencies</id>
@@ -487,13 +487,13 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.6.2</version>
+        <version>3.7.0</version>
       </plugin>
       
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>3.1.3</version>
       </plugin>      
 
     </plugins>
@@ -572,7 +572,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.2.4</version>
+            <version>3.2.7</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
