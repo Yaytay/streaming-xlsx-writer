@@ -49,7 +49,7 @@ jobs:
         NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
       run: mvn -B clean install site --file pom.xml
 
-    - uses: codecov/codecov-action@v4
+    - uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }} 
         files: target/site/jacoco/jacoco.xml 
