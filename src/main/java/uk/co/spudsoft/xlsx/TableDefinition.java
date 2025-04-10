@@ -93,6 +93,8 @@ public class TableDefinition {
    */
   public final List<ColumnDefinition> columns;
 
+  
+  
   /**
    * Constructor.
    * 

@@ -89,7 +89,7 @@ public class XlsxWriter implements Closeable {
   private final String xl_worksheets_sheet1_start = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetViews><sheetView workbookViewId=\"0\" tabSelected=\"true\"/></sheetViews><sheetFormatPr defaultRowHeight=\"15.0\"/>";
   private final String xl_worksheets_sheet1_end = "</sheetData><pageMargins bottom=\"0.75\" footer=\"0.3\" header=\"0.3\" left=\"0.7\" right=\"0.7\" top=\"0.75\"/></worksheet>";
   
-  private Map<String, Integer> numFmtIdMap = new HashMap<>();
+  private final Map<String, Integer> numFmtIdMap = new HashMap<>();
   private ZipOutputStream zipout;
   private int r = 0;
 
