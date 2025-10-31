@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"uk.co.spudsoft.xlsx","l":"ColourDefinition"},{"p":"uk.co.spudsoft.xlsx","l":"ColumnDefinition"},{"p":"uk.co.spudsoft.xlsx","l":"FontDefinition"},{"p":"uk.co.spudsoft.xlsx","l":"TableDefinition"},{"p":"uk.co.spudsoft.xlsx","l":"XlsxWriter"}];updateSearchResults();
