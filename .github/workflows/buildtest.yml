@@ -58,9 +58,10 @@ jobs:
         verbose: true 
 
     - name: Tidy up old package versions
-      uses: actions/delete-package-versions@v3
+      uses: actions/delete-package-versions@v5
       with: 
-        package-name: 'uk.co.spudsoft.xlsx'
+        package-name: 'uk.co.spudsoft.xlsx-writer'
+        package-type: maven
         min-versions-to-keep: 10
         delete-only-pre-release-versions: "true" 
                 
