@@ -58,7 +58,7 @@ jobs:
         verbose: true 
 
     - name: Tidy up old package versions
-      uses: actions/delete-package-versions@v3
+      uses: actions/delete-package-versions@v5
       with: 
         package-name: 'uk.co.spudsoft.xlsx'
         min-versions-to-keep: 10

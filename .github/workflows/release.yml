@@ -106,7 +106,7 @@ jobs:
         artifacts: "target/xlsx-writer*.jar*"
         token: ${{ github.token }} 
         
-    - uses: actions/delete-package-versions@v3
+    - uses: actions/delete-package-versions@v5
       with: 
         package-name: 'uk.co.spudsoft.xlsx'
         min-versions-to-keep: 10
