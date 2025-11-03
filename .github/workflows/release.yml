@@ -132,7 +132,7 @@ jobs:
         for file in `find gh-pages/docs -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort -r`; do echo "| ${file##*/} | [${file##*/}/project-info.html](https://${GITHUB_ACTOR}.github.io/${GITHUB_REPOSITORY##*/}/${file##*/}/project-info.html) | [${file##*/}/apidocs/index.html](https://${GITHUB_ACTOR}.github.io/${GITHUB_REPOSITORY##*/}/${file##*/}/apidocs/index.html) | " >> gh-pages/docs/index.md; done
 
     - name: Checkin GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v3
+      uses: crazy-max/ghaction-github-pages@v4
       with:
         target_branch: gh-pages
         build_dir: gh-pages
