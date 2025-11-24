@@ -19,7 +19,7 @@ jobs:
         git config --global core.eol lf
         
     - name: Checkout completely
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
@@ -114,7 +114,7 @@ jobs:
         delete-only-pre-release-versions: "true" 
         
     - name: Checkout GitHub Pages
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         ref: gh-pages
         path: gh-pages
