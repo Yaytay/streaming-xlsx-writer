@@ -19,7 +19,7 @@ jobs:
         git config --global core.eol lf
         
     - name: Checkout completely
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
@@ -27,7 +27,7 @@ jobs:
       run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       
     - name: Cache Maven packages
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2
@@ -114,7 +114,7 @@ jobs:
         delete-only-pre-release-versions: "true" 
         
     - name: Checkout GitHub Pages
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         ref: gh-pages
         path: gh-pages
