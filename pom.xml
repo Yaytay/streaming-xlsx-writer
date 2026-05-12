@@ -140,7 +140,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>2.19.1</version>
+        <version>2.21.0</version>
         <executions>
           <execution>
             <id>display-plugin-updates</id>
@@ -148,6 +148,14 @@
             <goals>
               <goal>display-plugin-updates</goal>
             </goals>
+            <configuration>
+              <ruleSet>
+                <ignoreVersion>
+                  <type>regex</type>
+                  <version>(.+-RC\d+|.+-M\d+|.+-beta-?\d+)</version>
+                </ignoreVersion>
+              </ruleSet>
+            </configuration>
           </execution>      
           <execution>
             <id>display-dependency-updates</id>
@@ -155,6 +163,14 @@
             <goals>
               <goal>display-dependency-updates</goal>
             </goals>
+            <configuration>
+              <ruleSet>
+                <ignoreVersion>
+                  <type>regex</type>
+                  <version>(.+-RC\d+|.+-M\d+|.+-beta-?\d+)</version>
+                </ignoreVersion>
+              </ruleSet>
+            </configuration>
           </execution>      
         </executions>      
       </plugin>
