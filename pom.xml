@@ -41,8 +41,8 @@
     <jackson.version>[2.15,]</jackson.version>
     <slf4j.version>[1.7,)</slf4j.version>
     <logback.version>[1.2,)</logback.version>
-    <junit-jupiter.version>6.1.0</junit-jupiter.version>
-    <junit-platform.version>6.1.0</junit-platform.version>
+    <junit-jupiter.version>6.1.2</junit-jupiter.version>
+    <junit-platform.version>6.1.2</junit-platform.version>
   </properties>
   
   <dependencies>
@@ -217,7 +217,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.5.1</version>
         <executions>
           <execution>
             <id>maven-jar-plugin-test-jar</id>
@@ -249,7 +249,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.10.2.0</version>
+        <version>4.10.3.0</version>
         <configuration>
           <fork>true</fork>
           <effort>Max</effort>
@@ -299,7 +299,7 @@
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>13.6.0</version>
+            <version>13.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -325,7 +325,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.5.5</version>
+        <version>3.5.6</version>
         <executions>
           <execution>
             <goals>
@@ -419,7 +419,7 @@
           <suppressionFiles>
             dependency-check-supressions.xml
           </suppressionFiles>
-          <nvdApiKey>${NVD_API_KEY}</nvdApiKey>
+          <nvdDatafeedUrl>https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-{0}.json.gz</nvdDatafeedUrl>
         </configuration>
         <executions>
           <execution>
