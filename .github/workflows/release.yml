@@ -34,7 +34,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
         
     - name: Set up JDK 25
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v6
       with:
         java-version: '25'
         distribution: 'zulu'
@@ -77,7 +77,7 @@ jobs:
           deploy
           
     - name: Set up maven for central sonatype deployment
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v6
       with:
         java-version: '25'
         distribution: 'zulu'
